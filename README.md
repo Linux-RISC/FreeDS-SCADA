@@ -37,4 +37,4 @@ sudo service nodered restart
 sudo raspi-config
 sudo systemctl enable systemd-timesyncd
 ```
-6. Download <a href="FreeDS-SCADA.json" target="_blank"></a>, import it into Node-Red and enjoy !
+6. Download <a href="FreeDS-SCADA.json" target="_blank">FreeDS-SCADA.json</a>, import it into Node-Red and enjoy !
