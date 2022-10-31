@@ -7,8 +7,8 @@ FreeDS SCADA developed using Node-Red
 This projects implements a SCADA for FreeDS
 
 #### Requeriments
-1. Raspberry Pi administration skills
-2. A Raspberry Pi, I'm using a Raspberry Pi 2 and a 16 GB SD card
+1. A Raspberry Pi, I'm using a Raspberry Pi 2 and a 16 GB SD card
+2. Raspberry Pi administration skills
 3. Install and configure Mosquito MQTT broker:<br>
 https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/
 ```
