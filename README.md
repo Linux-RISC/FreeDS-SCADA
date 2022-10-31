@@ -1,6 +1,6 @@
 <a href="https://www.buymeacoffee.com/rbpiuserf" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
-# FreeDS-SCADA (work in progress)
+# FreeDS-SCADA (work in progress, use only for trsting purposes)
 FreeDS SCADA developed using Node-Red
 
 #### Project objectives
@@ -37,3 +37,4 @@ sudo service nodered restart
 sudo raspi-config
 sudo systemctl enable systemd-timesyncd
 ```
+6. Download <a href="FreeDS-SCADA.json" target="_blank"></a>, import it into Node-Red and enjoy !
