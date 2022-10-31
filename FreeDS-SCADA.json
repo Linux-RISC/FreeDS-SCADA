@@ -1,0 +1,100 @@
+[
+    {
+        "id": "5049e1850e10ee6c",
+        "type": "tab",
+        "label": "FreeDS - logic",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4fd0efae444fc85b",
+        "type": "inject",
+        "z": "5049e1850e10ee6c",
+        "name": "L - D 04:00",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 04 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 80,
+        "wires": [
+            [
+                "aa6c0b2ef017418f"
+            ]
+        ]
+    },
+    {
+        "id": "aa6c0b2ef017418f",
+        "type": "http request",
+        "z": "5049e1850e10ee6c",
+        "name": "Reboot FreeDS",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://192.168.9.204/reboot",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "basic",
+        "senderr": false,
+        "headers": [],
+        "x": 320,
+        "y": 80,
+        "wires": [
+            [
+                "328a2d85d5d1b313"
+            ]
+        ]
+    },
+    {
+        "id": "328a2d85d5d1b313",
+        "type": "debug",
+        "z": "5049e1850e10ee6c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "1f6cde195363ebcf",
+        "type": "comment",
+        "z": "5049e1850e10ee6c",
+        "name": "Reboot FreeDS daily - copied from https://github.com/wepar2/configHAssistant/tree/main/Freeds",
+        "info": "Buenas yo tenia el mismo problema y ahora va de lujo, yo puse useExternalMeter 1 y invertGridValue 1. De lujo",
+        "x": 350,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "49a182a485130298",
+        "type": "comment",
+        "z": "5049e1850e10ee6c",
+        "name": "Change on \"Reboot FreeDS\" your FreeDS IP and user/password",
+        "info": "",
+        "x": 470,
+        "y": 120,
+        "wires": []
+    }
+]
