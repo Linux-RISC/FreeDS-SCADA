@@ -32,7 +32,7 @@ sudo systemctl enable nodered.service
 sudo service nodered restart
 ```
 
-5. Optional but recommendable: configure your timezone and enable time synchronization:
+5. Optional but recommendable: configure your timezone and enable time synchronization:<br>
 raspi-config --> Localisation Options --> Timezone
 ```
 sudo raspi-config
