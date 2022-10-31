@@ -9,7 +9,7 @@ This projects implements a SCADA for FreeDS
 #### Requeriments
 1. Raspberry Pi administration skills
 2. A Raspberry Pi, I'm using a Raspberry Pi 2 and a 16 GB SD card
-3. Install and configure Mosquito MQTT broker:
+3. Install and configure Mosquito MQTT broker:<br>
 https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/
 ```
 sudo apt install mosquitto mosquitto-clients
@@ -24,3 +24,13 @@ Enable and restart Mosquitto:
 sudo systemctl enable mosquitto.service
 sudo service mosquitto restart
 ```
+4. Install Node-Red:<br>
+https://nodered.org/docs/getting-started/raspberrypi
+```
+bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered) 
+sudo systemctl enable nodered.service
+sudo service nodered restart
+```
+
+5. Optional but recommendable
+
