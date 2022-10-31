@@ -31,6 +31,9 @@ bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/mast
 sudo systemctl enable nodered.service
 sudo service nodered restart
 ```
+Access to Node-Red from a Internet browser:<br>
+http://raspberry-pi-IP:1880<br>
+http://raspberry-pi-IP:1880/ui (runtime)<br>
 
 5. Optional but recommendable: configure your timezone and enable time synchronization:<br>
 raspi-config --> Localisation Options --> Timezone
