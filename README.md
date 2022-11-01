@@ -44,7 +44,7 @@ sudo raspi-config
 sudo systemctl enable systemd-timesyncd
 ```
 
-6. Log into Node-Red using http://raspberry-pi-IP:1880 and install node-red-dashboard:
+6. Log into Node-Red using http://raspberry-pi-IP:1880 and install node-red-dashboard:<br>
 Menu-->Manage Palete-->Install and search node-red-dashboard, select it for installation and accept
 
 7. Download <a href="FreeDS-SCADA.json" target="_blank">FreeDS-SCADA.json</a>, import it into Node-Red and enjoy !
