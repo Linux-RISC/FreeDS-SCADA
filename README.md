@@ -4,7 +4,10 @@
 FreeDS SCADA developed using Node-Red
 
 #### Project objectives
-This projects implements a SCADA for FreeDS
+This project implements a SCADA for FreeDS, developing these functions:
+- shows information about FreeDS status
+- allows enable/disable PWM and switching modes AUT<-->MAN
+- implements two set points in order to switch to MAN mode when the temperature is <= Low_temperature_set_point and switches to AUTO mode when the temperature is >= High_temperature_set_point
 
 #### Requeriments
 1. A Raspberry Pi, I'm using a Raspberry Pi 2 and a 16 GB SD card
