@@ -35,10 +35,16 @@ Access to Node-Red from a Internet browser:<br>
 http://raspberry-pi-IP:1880<br>
 http://raspberry-pi-IP:1880/ui (runtime)<br>
 
-5. Optional but recommendable: configure your timezone and enable time synchronization:<br>
+5. Optional but recommendable:
+- download MQTT explorer in order to debug MQTT broker: http://mqtt-explorer.com/
+- configure your timezone and enable time synchronization:<br>
 raspi-config --> Localisation Options --> Timezone
 ```
 sudo raspi-config
 sudo systemctl enable systemd-timesyncd
 ```
-6. Download <a href="FreeDS-SCADA.json" target="_blank">FreeDS-SCADA.json</a>, import it into Node-Red and enjoy !
+
+6. Log into Node-Red using http://raspberry-pi-IP:1880 and install node-red-dashboard:
+Menu-->Manage Palete-->Install and search node-red-dashboard, select it for installation and accept
+
+7. Download <a href="FreeDS-SCADA.json" target="_blank">FreeDS-SCADA.json</a>, import it into Node-Red and enjoy !
