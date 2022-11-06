@@ -60,9 +60,7 @@
             "49a182a485130298"
         ],
         "x": 34,
-        "y": 39,
-        "w": 732,
-        "h": 202
+        "y": 59
     },
     {
         "id": "73afd11ef5989fa6",
@@ -86,9 +84,7 @@
             "8059f443d664f1e4"
         ],
         "x": 14,
-        "y": 79,
-        "w": 432,
-        "h": 202
+        "y": 79
     },
     {
         "id": "ab01e04905053346",
@@ -110,7 +106,7 @@
         ],
         "x": 14,
         "y": 579,
-        "w": 412,
+        "w": 452,
         "h": 262
     },
     {
@@ -178,9 +174,7 @@
             "a80ab3b6f4ee3c52"
         ],
         "x": 14,
-        "y": 79,
-        "w": 452,
-        "h": 142
+        "y": 79
     },
     {
         "id": "7a552793f66527ee",
@@ -203,9 +197,7 @@
             "fc3f5aafdc66e59b"
         ],
         "x": 14,
-        "y": 79,
-        "w": 492,
-        "h": 202
+        "y": 79
     },
     {
         "id": "bcc760fcd1a03ce9",
@@ -227,14 +219,14 @@
         ],
         "x": 14,
         "y": 319,
-        "w": 412,
+        "w": 432,
         "h": 242
     },
     {
         "id": "4662cbccc81a7620",
         "type": "mqtt-broker",
-        "name": "myFreeDS",
-        "broker": "192.168.9.204",
+        "name": "my Node-Red server",
+        "broker": "127.0.0.1",
         "port": "1883",
         "clientid": "",
         "autoConnect": true,
@@ -447,18 +439,11 @@
         "className": ""
     },
     {
-        "id": "ea5e7575d0f9638f",
-        "type": "ui_tab",
-        "name": "Tab 6",
-        "icon": "dashboard",
-        "order": 6
-    },
-    {
         "id": "4fd0efae444fc85b",
         "type": "inject",
         "z": "5049e1850e10ee6c",
         "g": "a3de47b1b2c96e60",
-        "name": "L - D 04:00",
+        "name": "L - D 15:00",
         "props": [
             {
                 "p": "payload"
@@ -469,14 +454,14 @@
             }
         ],
         "repeat": "",
-        "crontab": "00 04 * * *",
+        "crontab": "00 15 * * *",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
         "payload": "",
         "payloadType": "date",
         "x": 150,
-        "y": 160,
+        "y": 180,
         "wires": [
             [
                 "aa6c0b2ef017418f"
@@ -501,7 +486,7 @@
         "senderr": false,
         "headers": [],
         "x": 360,
-        "y": 160,
+        "y": 180,
         "wires": [
             [
                 "328a2d85d5d1b313"
@@ -523,7 +508,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 630,
-        "y": 160,
+        "y": 180,
         "wires": []
     },
     {
@@ -534,7 +519,7 @@
         "name": "Reboot FreeDS daily - copied from https://github.com/wepar2/configHAssistant/tree/main/Freeds",
         "info": "Buenas yo tenia el mismo problema y ahora va de lujo, yo puse useExternalMeter 1 y invertGridValue 1. De lujo",
         "x": 390,
-        "y": 80,
+        "y": 100,
         "wires": []
     },
     {
@@ -545,268 +530,7 @@
         "name": "Change on \"Reboot FreeDS\" your FreeDS IP and user/password",
         "info": "",
         "x": 510,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "17de3da2a0c170e9",
-        "type": "mqtt in",
-        "z": "5049e1850e10ee6c",
-        "name": "",
-        "topic": "freeds_57d0/tempTermo",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "4662cbccc81a7620",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 150,
-        "y": 320,
-        "wires": [
-            [
-                "1970c0ab3730681f"
-            ]
-        ]
-    },
-    {
-        "id": "804ad00b08de7f12",
-        "type": "mqtt in",
-        "z": "5049e1850e10ee6c",
-        "name": "",
-        "topic": "freeds_57d0/FDSS_b_minTempManualMode",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "4662cbccc81a7620",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 210,
-        "y": 380,
-        "wires": [
-            [
-                "1970c0ab3730681f"
-            ]
-        ]
-    },
-    {
-        "id": "88a9194f1e6586cf",
-        "type": "mqtt in",
-        "z": "5049e1850e10ee6c",
-        "name": "",
-        "topic": "freeds_57d0/FDSSLowTempManualMode",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "4662cbccc81a7620",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 200,
-        "y": 440,
-        "wires": [
-            [
-                "1970c0ab3730681f"
-            ]
-        ]
-    },
-    {
-        "id": "3ac0d9a2e2e3b784",
-        "type": "mqtt in",
-        "z": "5049e1850e10ee6c",
-        "name": "",
-        "topic": "freeds_57d0/FDSSHighTempAutoMode",
-        "qos": "2",
-        "datatype": "auto-detect",
-        "broker": "4662cbccc81a7620",
-        "nl": false,
-        "rap": true,
-        "rh": 0,
-        "inputs": 0,
-        "x": 190,
-        "y": 500,
-        "wires": [
-            [
-                "1970c0ab3730681f"
-            ]
-        ]
-    },
-    {
-        "id": "ebb088bbe9c57465",
-        "type": "debug",
-        "z": "5049e1850e10ee6c",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "complete",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 660,
-        "y": 420,
-        "wires": []
-    },
-    {
-        "id": "1970c0ab3730681f",
-        "type": "join",
-        "z": "5049e1850e10ee6c",
-        "d": true,
-        "name": "",
-        "mode": "auto",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": true,
-        "timeout": "",
-        "count": "1",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "num",
-        "reduceFixup": "",
-        "x": 490,
-        "y": 420,
-        "wires": [
-            [
-                "ebb088bbe9c57465"
-            ]
-        ]
-    },
-    {
-        "id": "1c817977e60e990f",
-        "type": "inject",
-        "z": "5049e1850e10ee6c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "1",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 110,
-        "y": 600,
-        "wires": [
-            [
-                "0526a795b56f535f"
-            ]
-        ]
-    },
-    {
-        "id": "2fba698816b36902",
-        "type": "inject",
-        "z": "5049e1850e10ee6c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "parts",
-                "v": "{\"2\"}",
-                "vt": "str"
-            }
-        ],
-        "repeat": "1",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 110,
-        "y": 660,
-        "wires": [
-            [
-                "0526a795b56f535f"
-            ]
-        ]
-    },
-    {
-        "id": "c0390fcd23c67f67",
-        "type": "inject",
-        "z": "5049e1850e10ee6c",
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "parts",
-                "v": "{\"3\"}",
-                "vt": "str"
-            }
-        ],
-        "repeat": "1",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 110,
-        "y": 720,
-        "wires": [
-            [
-                "0526a795b56f535f"
-            ]
-        ]
-    },
-    {
-        "id": "0526a795b56f535f",
-        "type": "join",
-        "z": "5049e1850e10ee6c",
-        "d": true,
-        "name": "",
-        "mode": "auto",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "accumulate": true,
-        "timeout": "",
-        "count": "",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "",
-        "reduceFixup": "",
-        "x": 310,
-        "y": 660,
-        "wires": [
-            [
-                "6976c8b9b84c73e6"
-            ]
-        ]
-    },
-    {
-        "id": "6976c8b9b84c73e6",
-        "type": "debug",
-        "z": "5049e1850e10ee6c",
-        "name": "debug 2",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 500,
-        "y": 660,
+        "y": 240,
         "wires": []
     },
     {
@@ -913,9 +637,9 @@
         "id": "87cbfa61a15b64bd",
         "type": "comment",
         "z": "d8b26bf5573e291c",
-        "name": "Don't forget changing your FreeDS IP and name",
+        "name": "Don't forget changing your FreeDS name",
         "info": "",
-        "x": 200,
+        "x": 180,
         "y": 40,
         "wires": []
     },
@@ -987,7 +711,7 @@
         "z": "a2c7bcaf73c72f45",
         "g": "73afd11ef5989fa6",
         "group": "4046c2bca086f4bc",
-        "order": 2,
+        "order": 1,
         "width": 0,
         "height": 0,
         "name": "",
@@ -1005,7 +729,7 @@
         "z": "a2c7bcaf73c72f45",
         "g": "73afd11ef5989fa6",
         "group": "4046c2bca086f4bc",
-        "order": 2,
+        "order": 3,
         "width": 0,
         "height": 0,
         "name": "",
@@ -1043,9 +767,9 @@
         "id": "ee3c0bcb50817aed",
         "type": "comment",
         "z": "a2c7bcaf73c72f45",
-        "name": "Don't forget changing your FreeDS IP and name",
+        "name": "Don't forget changing your FreeDS name",
         "info": "",
-        "x": 200,
+        "x": 180,
         "y": 40,
         "wires": []
     },
@@ -1053,9 +777,9 @@
         "id": "7b79ce6744599d9f",
         "type": "comment",
         "z": "0f0df6776e0a1f53",
-        "name": "Don't forget changing your FreeDS IP and name",
+        "name": "Don't forget changing your FreeDS name",
         "info": "",
-        "x": 200,
+        "x": 180,
         "y": 40,
         "wires": []
     },
@@ -1200,7 +924,7 @@
         "z": "6cd29244e24de4f2",
         "g": "abf0e2592e5868d7",
         "name": "",
-        "topic": "freeds_57d0/FDSS_b_minTempManualMode",
+        "topic": "freeds_57d0/FDS_b_LowTempManualMode",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "4662cbccc81a7620",
@@ -1222,7 +946,7 @@
         "z": "6cd29244e24de4f2",
         "g": "ab01e04905053346",
         "name": "",
-        "topic": "freeds_57d0/FDSSHighTempAutoMode",
+        "topic": "freeds_57d0/FDS_TempIncreaseAutoMode",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "4662cbccc81a7620",
@@ -1230,7 +954,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 190,
+        "x": 200,
         "y": 620,
         "wires": [
             [
@@ -1244,7 +968,7 @@
         "z": "6cd29244e24de4f2",
         "g": "ab01e04905053346",
         "name": "",
-        "label": "High temperature to return to AUTO mode",
+        "label": "Temperature increase to return to AUTO mode ºC",
         "tooltip": "",
         "group": "86c5512545769877",
         "order": 5,
@@ -1259,7 +983,7 @@
         "max": "100",
         "step": 1,
         "className": "",
-        "x": 220,
+        "x": 250,
         "y": 700,
         "wires": [
             [
@@ -1273,16 +997,16 @@
         "z": "6cd29244e24de4f2",
         "g": "ab01e04905053346",
         "name": "",
-        "topic": "freeds_57d0/FDSSHighTempAutoMode",
+        "topic": "freeds_57d0/FDS_TempIncreaseAutoMode",
         "qos": "",
-        "retain": "",
+        "retain": "true",
         "respTopic": "",
         "contentType": "",
         "userProps": "",
         "correl": "",
         "expiry": "",
         "broker": "4662cbccc81a7620",
-        "x": 240,
+        "x": 250,
         "y": 800,
         "wires": []
     },
@@ -1383,9 +1107,9 @@
         "z": "6cd29244e24de4f2",
         "g": "eb0ccf529a515511",
         "name": "",
-        "topic": "freeds_57d0/FDSS_b_minTempManualMode",
+        "topic": "freeds_57d0/FDS_b_LowTempManualMode",
         "qos": "",
-        "retain": "",
+        "retain": "true",
         "respTopic": "",
         "contentType": "",
         "userProps": "",
@@ -1402,7 +1126,7 @@
         "z": "6cd29244e24de4f2",
         "g": "bcc760fcd1a03ce9",
         "name": "",
-        "topic": "freeds_57d0/FDSSLowTempManualMode",
+        "topic": "freeds_57d0/FDS_LowTempManualMode",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "4662cbccc81a7620",
@@ -1424,7 +1148,7 @@
         "z": "6cd29244e24de4f2",
         "g": "bcc760fcd1a03ce9",
         "name": "",
-        "label": "Low temperature to switch to MAN mode",
+        "label": "Low temperature to switch to MAN mode ºC",
         "tooltip": "",
         "group": "86c5512545769877",
         "order": 4,
@@ -1439,7 +1163,7 @@
         "max": "100",
         "step": 1,
         "className": "",
-        "x": 240,
+        "x": 250,
         "y": 440,
         "wires": [
             [
@@ -1453,9 +1177,9 @@
         "z": "6cd29244e24de4f2",
         "g": "bcc760fcd1a03ce9",
         "name": "",
-        "topic": "freeds_57d0/FDSSLowTempManualMode",
+        "topic": "freeds_57d0/FDS_LowTempManualMode",
         "qos": "",
-        "retain": "",
+        "retain": "true",
         "respTopic": "",
         "contentType": "",
         "userProps": "",
@@ -1470,9 +1194,9 @@
         "id": "168c0b562ec72440",
         "type": "comment",
         "z": "6cd29244e24de4f2",
-        "name": "Don't forget changing your FreeDS IP and name",
+        "name": "Don't forget changing your FreeDS name",
         "info": "",
-        "x": 200,
+        "x": 180,
         "y": 40,
         "wires": []
     }
