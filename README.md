@@ -1,6 +1,6 @@
 <a href="https://www.buymeacoffee.com/rbpiuserf" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
-# FreeDS-SCADA (work in progress, use for testing purposes only)
+# FreeDS-SCADA (Pyhon script added, work in progress, use for testing purposes only)
 FreeDS SCADA developed using Node-Red
 
 #### Project objectives
@@ -49,5 +49,7 @@ sudo systemctl enable systemd-timesyncd
 
 6. Log into Node-Red using http://raspberry-pi-IP:1880 and install node-red-dashboard:<br>
 Menu-->Manage Palete-->Install and search node-red-dashboard, select it for installation and accept
+
+7. Download <a href="FreeDS.py" target="_blank">FreeDS.py</a> and run it in a screen session
 
 7. Download <a href="FreeDS-SCADA.json" target="_blank">FreeDS-SCADA.json</a>, import it into Node-Red and enjoy !
