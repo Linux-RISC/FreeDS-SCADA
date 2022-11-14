@@ -60,7 +60,9 @@
             "49a182a485130298"
         ],
         "x": 34,
-        "y": 59
+        "y": 59,
+        "w": 712,
+        "h": 222
     },
     {
         "id": "73afd11ef5989fa6",
@@ -105,9 +107,7 @@
             "524d31480734b253"
         ],
         "x": 14,
-        "y": 579,
-        "w": 452,
-        "h": 262
+        "y": 579
     },
     {
         "id": "abf0e2592e5868d7",
@@ -127,9 +127,7 @@
             "eeeee2c69ae6afa0"
         ],
         "x": 14,
-        "y": 79,
-        "w": 592,
-        "h": 82
+        "y": 79
     },
     {
         "id": "eb0ccf529a515511",
@@ -150,9 +148,7 @@
             "8552bee6b8c79f80"
         ],
         "x": 14,
-        "y": 179,
-        "w": 612,
-        "h": 122
+        "y": 179
     },
     {
         "id": "2e043a9e465dd95b",
@@ -218,9 +214,7 @@
             "6b57585c3193670d"
         ],
         "x": 14,
-        "y": 319,
-        "w": 432,
-        "h": 242
+        "y": 319
     },
     {
         "id": "4662cbccc81a7620",
@@ -443,7 +437,7 @@
         "type": "inject",
         "z": "5049e1850e10ee6c",
         "g": "a3de47b1b2c96e60",
-        "name": "L - D 15:00",
+        "name": "L - D 04:00",
         "props": [
             {
                 "p": "payload"
@@ -454,7 +448,7 @@
             }
         ],
         "repeat": "",
-        "crontab": "00 15 * * *",
+        "crontab": "00 04 * * *",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
@@ -482,7 +476,7 @@
         "persist": false,
         "proxy": "",
         "insecureHTTPParser": false,
-        "authType": "basic",
+        "authType": "",
         "senderr": false,
         "headers": [],
         "x": 360,
@@ -527,9 +521,9 @@
         "type": "comment",
         "z": "5049e1850e10ee6c",
         "g": "a3de47b1b2c96e60",
-        "name": "Change on \"Reboot FreeDS\" your FreeDS IP and user/password",
+        "name": "Change on \"Reboot FreeDS\" your FreeDS IP",
         "info": "",
-        "x": 510,
+        "x": 450,
         "y": 240,
         "wires": []
     },
