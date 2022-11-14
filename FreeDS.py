@@ -47,9 +47,8 @@ def connect_mqtt() -> mqtt_client:
     client.connect(broker_name, broker_port)
     return client
 #----------------------------------------------------------------------
-def setManualMode(client):
+def publish(client, msg):
         time.sleep(1)
-        msg = '{"command":"pwmman","payload":"1"}'
         result = client.publish(topic_send, msg)
         # result: [0, 1]
         status = result[0]
@@ -58,16 +57,21 @@ def setManualMode(client):
         else:
             print(f"Failed to send message to topic {topic}")
 #----------------------------------------------------------------------
+def setManualMode(client):
+        msg = '{"command":"pwmman","payload":"1"}'
+        publish(client,msg)
+#----------------------------------------------------------------------
 def setAutomaticMode(client):
-        time.sleep(1)
         msg = '{"command":"pwmman","payload":"0"}'
-        result = client.publish(topic_send, msg)
-        # result: [0, 1]
-        status = result[0]
-        if status == 0:
-            print(f"Send `{msg}` to topic `{topic_send}`")
-        else:
-            print(f"Failed to send message to topic {topic}")
+        publish(client,msg)
+#----------------------------------------------------------------------
+def setFanOn(client):
+        msg = '{"command":"relay4","payload":"1"}'
+        publish(client,msg)
+#----------------------------------------------------------------------
+def setFanOff(client):
+        msg = '{"command":"relay4","payload":"0"}'
+        publish(client,msg)
 #----------------------------------------------------------------------
 def subscribe(client: mqtt_client):
     def on_message(client, userdata, msg):
@@ -101,17 +105,23 @@ def subscribe(client: mqtt_client):
         # 1. FDS_b_LowTempManualMode has to be True
         if not FDS_b_LowTempManualMode:
            print ("")
+           #setAutomaticMode(client)  
+           #setFanOff(client)  
            return 
 
         # if temperature<=FDS_LowTempManualMode, switch to manual mode
         if FDS_tempTermo <= FDS_LowTempManualMode:
             print("Switching to manual mode")
+            print("Switching the fan on")
             setManualMode(client)  
+            setFanOn(client)  
 
         # if temperature>=FDS_LowTempManualMode+FDS_TempIncreaseAutoMode, return to automatic mode
         if FDS_tempTermo >= (FDS_LowTempManualMode+FDS_TempIncreaseAutoMode):
             print("Returning to automatic mode")
+            print("Switching the fan off")
             setAutomaticMode(client)  
+            setFanOff(client)  
 
         print ("")
     		
