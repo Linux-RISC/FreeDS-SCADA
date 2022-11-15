@@ -12,10 +12,10 @@ This project implements a SCADA for FreeDS, developing these functions:
 #### Requeriments
 1. A Raspberry Pi, I'm using a Raspberry Pi 2 and a 16 GB SD card
 2. Raspberry Pi administration skills
-3. Install and configure Mosquito MQTT broker:<br>
+3. Install and configure Mosquito MQTT broker and required utilities:<br>
 https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/
 ```
-sudo apt install mosquitto mosquitto-clients
+sudo apt install mosquitto mosquitto-clients screen
 ```
 Edit /etc/mosquitto/mosquitto.conf and add at the end:
 ```
