@@ -119,9 +119,9 @@ def subscribe(client: mqtt_client):
         # if temperature>=FDS_LowTempManualMode+FDS_TempIncreaseAutoMode, return to automatic mode
         if FDS_tempTermo >= (FDS_LowTempManualMode+FDS_TempIncreaseAutoMode):
             print("Returning to automatic mode")
-            print("Switching the fan off")
+            #print("Switching the fan off")
             setAutomaticMode(client)  
-            setFanOff(client)  
+            #setFanOff(client)  
 
         print ("")
     		

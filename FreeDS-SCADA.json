@@ -1,13 +1,5 @@
 [
     {
-        "id": "5049e1850e10ee6c",
-        "type": "tab",
-        "label": "Logic",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "d8b26bf5573e291c",
         "type": "tab",
         "label": "Gauge",
@@ -38,31 +30,6 @@
         "disabled": false,
         "info": "",
         "env": []
-    },
-    {
-        "id": "a3de47b1b2c96e60",
-        "type": "group",
-        "z": "5049e1850e10ee6c",
-        "style": {
-            "stroke": "#999999",
-            "stroke-opacity": "1",
-            "fill": "none",
-            "fill-opacity": "1",
-            "label": true,
-            "label-position": "nw",
-            "color": "#a4a4a4"
-        },
-        "nodes": [
-            "4fd0efae444fc85b",
-            "aa6c0b2ef017418f",
-            "328a2d85d5d1b313",
-            "1f6cde195363ebcf",
-            "49a182a485130298"
-        ],
-        "x": 34,
-        "y": 59,
-        "w": 712,
-        "h": 222
     },
     {
         "id": "73afd11ef5989fa6",
@@ -170,7 +137,9 @@
             "a80ab3b6f4ee3c52"
         ],
         "x": 14,
-        "y": 79
+        "y": 79,
+        "w": 452,
+        "h": 142
     },
     {
         "id": "7a552793f66527ee",
@@ -431,101 +400,6 @@
         "width": "6",
         "collapse": false,
         "className": ""
-    },
-    {
-        "id": "4fd0efae444fc85b",
-        "type": "inject",
-        "z": "5049e1850e10ee6c",
-        "g": "a3de47b1b2c96e60",
-        "name": "L - D 04:00",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "00 04 * * *",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 150,
-        "y": 180,
-        "wires": [
-            [
-                "aa6c0b2ef017418f"
-            ]
-        ]
-    },
-    {
-        "id": "aa6c0b2ef017418f",
-        "type": "http request",
-        "z": "5049e1850e10ee6c",
-        "g": "a3de47b1b2c96e60",
-        "name": "Reboot FreeDS",
-        "method": "GET",
-        "ret": "txt",
-        "paytoqs": "ignore",
-        "url": "http://192.168.9.203/reboot",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 360,
-        "y": 180,
-        "wires": [
-            [
-                "328a2d85d5d1b313"
-            ]
-        ]
-    },
-    {
-        "id": "328a2d85d5d1b313",
-        "type": "debug",
-        "z": "5049e1850e10ee6c",
-        "g": "a3de47b1b2c96e60",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 630,
-        "y": 180,
-        "wires": []
-    },
-    {
-        "id": "1f6cde195363ebcf",
-        "type": "comment",
-        "z": "5049e1850e10ee6c",
-        "g": "a3de47b1b2c96e60",
-        "name": "Reboot FreeDS daily - copied from https://github.com/wepar2/configHAssistant/tree/main/Freeds",
-        "info": "Buenas yo tenia el mismo problema y ahora va de lujo, yo puse useExternalMeter 1 y invertGridValue 1. De lujo",
-        "x": 390,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "49a182a485130298",
-        "type": "comment",
-        "z": "5049e1850e10ee6c",
-        "g": "a3de47b1b2c96e60",
-        "name": "Change on \"Reboot FreeDS\" your FreeDS IP",
-        "info": "",
-        "x": 450,
-        "y": 240,
-        "wires": []
     },
     {
         "id": "87bae9c3a362dd77",
