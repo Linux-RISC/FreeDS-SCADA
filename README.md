@@ -52,4 +52,6 @@ Menu-->Manage Palete-->Install and search node-red-dashboard, select it for inst
 
 7. Download <a href="FreeDS.py" target="_blank">FreeDS.py</a> and run it in a screen session
 
-7. Download <a href="FreeDS-SCADA.json" target="_blank">FreeDS-SCADA.json</a>, import it into Node-Red and enjoy !
+8. Download <a href="FreeDS-SCADA.json" target="_blank">FreeDS-SCADA.json</a>, import it into Node-Red and enjoy !
+
+<img src="FreeDS-SCADA.png" title="FreeDS-SCADA">
