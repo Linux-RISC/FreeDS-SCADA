@@ -18,12 +18,14 @@ username = ''
 password = ''
 
 FDS_name = 'freeds_57d0'
+topic_FDS_stat_pwm = FDS_name+"/stat/pwm"
 topic_FDS_tempTermo = FDS_name+"/tempTermo"
 topic_FDS_b_LowTempManualMode = FDS_name+"/FDS_b_LowTempManualMode"
 topic_FDS_LowTempManualMode = FDS_name+"/FDS_LowTempManualMode"
 topic_FDS_TempIncreaseAutoMode = FDS_name+"/FDS_TempIncreaseAutoMode"
 topic_send = FDS_name+"/cmnd"
 
+FDS_stat_pwm = "AUTO"
 FDS_tempTermo = 0
 FDS_b_LowTempManualMode = False
 FDS_LowTempManualMode = 0
@@ -75,8 +77,9 @@ def setFanOff(client):
 #----------------------------------------------------------------------
 def subscribe(client: mqtt_client):
     def on_message(client, userdata, msg):
-        global FDS_b_LowTempManualMode
+        global FDS_stat_pwm
         global FDS_tempTermo
+        global FDS_b_LowTempManualMode
         global FDS_LowTempManualMode
         global FDS_TempIncreaseAutoMode
 
@@ -88,6 +91,8 @@ def subscribe(client: mqtt_client):
 
         if topic == topic_FDS_tempTermo:
            FDS_tempTermo = float(msg.payload.decode())
+        elif topic == topic_FDS_stat_pwm:
+           FDS_stat_pwm = msg.payload.decode()
         elif topic == topic_FDS_b_LowTempManualMode:
            FDS_b_LowTempManualMode = True if msg.payload.decode()=='true' else False
         elif topic == topic_FDS_LowTempManualMode:
@@ -97,27 +102,27 @@ def subscribe(client: mqtt_client):
         else:
            return
 
+        print ("FDS_stat_pwm="+FDS_stat_pwm);
         print ("FDS_tempTermo="+str(FDS_tempTermo));
         print ("FDS_b_LowTempManualMode="+str(FDS_b_LowTempManualMode));
         print ("FDS_LowTempManualMode="+str(FDS_LowTempManualMode));
         print ("FDS_TempIncreaseAutoMode="+str(FDS_TempIncreaseAutoMode));
-
+ 
         # 1. FDS_b_LowTempManualMode has to be True
         if not FDS_b_LowTempManualMode:
            print ("")
-           #setAutomaticMode(client)  
-           #setFanOff(client)  
            return 
 
-        # if temperature<=FDS_LowTempManualMode, switch to manual mode
-        if FDS_tempTermo <= FDS_LowTempManualMode:
+        # if AUTO mode and temperature<=FDS_LowTempManualMode, switch to manual mode
+        if FDS_stat_pwm=="AUTO" and FDS_tempTermo <= FDS_LowTempManualMode:
             print("Switching to manual mode")
             print("Switching the fan on")
             setManualMode(client)  
+            # enter on console: relay4AsFanSwitch 1
             setFanOn(client)  
 
-        # if temperature>=FDS_LowTempManualMode+FDS_TempIncreaseAutoMode, return to automatic mode
-        if FDS_tempTermo >= (FDS_LowTempManualMode+FDS_TempIncreaseAutoMode):
+        # if MAN mode and temperature>=FDS_LowTempManualMode+FDS_TempIncreaseAutoMode, return to automatic mode
+        if FDS_stat_pwm=="MAN" and FDS_tempTermo >= (FDS_LowTempManualMode+FDS_TempIncreaseAutoMode):
             print("Returning to automatic mode")
             #print("Switching the fan off")
             setAutomaticMode(client)  
@@ -125,6 +130,7 @@ def subscribe(client: mqtt_client):
 
         print ("")
     		
+    client.subscribe(topic_FDS_stat_pwm)
     client.subscribe(topic_FDS_tempTermo)
     client.subscribe(topic_FDS_b_LowTempManualMode)
     client.subscribe(topic_FDS_LowTempManualMode)
