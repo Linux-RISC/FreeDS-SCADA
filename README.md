@@ -3,6 +3,8 @@
 # FreeDS-SCADA (Pyhon script added, work in progress, use for testing purposes only)
 FreeDS SCADA developed using Node-Red
 
+<img src="FreeDS-SCADA.png" title="FreeDS-SCADA">
+
 #### Project objectives
 This project implements a SCADA for FreeDS, developing these functions:
 - shows information about FreeDS status
@@ -53,5 +55,3 @@ Menu-->Manage Palete-->Install and search node-red-dashboard, select it for inst
 7. Download <a href="FreeDS.py" target="_blank">FreeDS.py</a> and run it in a screen session
 
 8. Download <a href="FreeDS-SCADA.json" target="_blank">FreeDS-SCADA.json</a>, import it into Node-Red and enjoy !
-
-<img src="FreeDS-SCADA.png" title="FreeDS-SCADA">
