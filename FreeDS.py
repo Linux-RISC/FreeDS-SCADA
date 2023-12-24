@@ -17,7 +17,7 @@ client_id = f'python-mqtt-{random.randint(0, 100)}'
 username = ''
 password = ''
 
-FDS_name = 'freeds_57d0'
+FDS_name = 'freeds_57D0'
 topic_FDS_stat_pwm = FDS_name+"/stat/pwm"
 topic_FDS_tempTermo = FDS_name+"/tempTermo"
 topic_FDS_b_LowTempManualMode = FDS_name+"/FDS_b_LowTempManualMode"
