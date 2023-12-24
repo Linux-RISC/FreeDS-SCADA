@@ -1,5 +1,9 @@
 <a href="https://www.buymeacoffee.com/rbpiuserf" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
+Last update: 2023/12/25
+- some translations improved
+- works with the last version of FreeDS (Release 1.1.0018 Beta)
+
 # FreeDS-SCADA (Pyhon script added, work in progress, use for testing purposes only)
 FreeDS SCADA developed using Node-Red
 
