@@ -53,7 +53,9 @@
             "8059f443d664f1e4"
         ],
         "x": 14,
-        "y": 79
+        "y": 79,
+        "w": 432,
+        "h": 202
     },
     {
         "id": "ab01e04905053346",
@@ -74,7 +76,9 @@
             "524d31480734b253"
         ],
         "x": 14,
-        "y": 579
+        "y": 579,
+        "w": 452,
+        "h": 262
     },
     {
         "id": "abf0e2592e5868d7",
@@ -94,7 +98,9 @@
             "eeeee2c69ae6afa0"
         ],
         "x": 14,
-        "y": 79
+        "y": 79,
+        "w": 592,
+        "h": 82
     },
     {
         "id": "eb0ccf529a515511",
@@ -115,7 +121,9 @@
             "8552bee6b8c79f80"
         ],
         "x": 14,
-        "y": 179
+        "y": 179,
+        "w": 612,
+        "h": 122
     },
     {
         "id": "2e043a9e465dd95b",
@@ -162,7 +170,9 @@
             "fc3f5aafdc66e59b"
         ],
         "x": 14,
-        "y": 79
+        "y": 79,
+        "w": 492,
+        "h": 202
     },
     {
         "id": "bcc760fcd1a03ce9",
@@ -183,7 +193,9 @@
             "6b57585c3193670d"
         ],
         "x": 14,
-        "y": 319
+        "y": 319,
+        "w": 432,
+        "h": 242
     },
     {
         "id": "4662cbccc81a7620",
@@ -197,6 +209,7 @@
         "protocolVersion": "4",
         "keepalive": "60",
         "cleansession": true,
+        "autoUnsubscribe": true,
         "birthTopic": "",
         "birthQos": "0",
         "birthPayload": "",
@@ -407,7 +420,7 @@
         "z": "d8b26bf5573e291c",
         "g": "2e043a9e465dd95b",
         "name": "",
-        "topic": "freeds_57d0/pwm",
+        "topic": "freeds_57D0/pwm",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "4662cbccc81a7620",
@@ -457,7 +470,7 @@
         "z": "d8b26bf5573e291c",
         "g": "2e043a9e465dd95b",
         "name": "",
-        "topic": "freeds_57d0/tempTermo",
+        "topic": "freeds_57D0/tempTermo",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "4662cbccc81a7620",
@@ -505,7 +518,7 @@
         "id": "87cbfa61a15b64bd",
         "type": "comment",
         "z": "d8b26bf5573e291c",
-        "name": "Don't forget changing your FreeDS name",
+        "name": "Don't forget to change your FreeDS name",
         "info": "",
         "x": 180,
         "y": 40,
@@ -517,7 +530,7 @@
         "z": "a2c7bcaf73c72f45",
         "g": "73afd11ef5989fa6",
         "name": "",
-        "topic": "freeds_57d0/wsolar",
+        "topic": "freeds_57D0/solarW",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "4662cbccc81a7620",
@@ -539,7 +552,7 @@
         "z": "a2c7bcaf73c72f45",
         "g": "73afd11ef5989fa6",
         "name": "",
-        "topic": "freeds_57d0/wgrid",
+        "topic": "freeds_57D0/gridW",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "4662cbccc81a7620",
@@ -565,7 +578,7 @@
         "width": 0,
         "height": 0,
         "name": "",
-        "label": "wgrid (W)",
+        "label": "gridW (W)",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
@@ -583,7 +596,7 @@
         "width": 0,
         "height": 0,
         "name": "",
-        "label": "wsolar (W)",
+        "label": "solarW (W)",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
@@ -615,7 +628,7 @@
         "z": "a2c7bcaf73c72f45",
         "g": "73afd11ef5989fa6",
         "name": "",
-        "topic": "freeds_57d0/stat/pwm",
+        "topic": "freeds_57D0/stat/pwm",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "4662cbccc81a7620",
@@ -635,7 +648,7 @@
         "id": "ee3c0bcb50817aed",
         "type": "comment",
         "z": "a2c7bcaf73c72f45",
-        "name": "Don't forget changing your FreeDS name",
+        "name": "Don't forget to change your FreeDS name",
         "info": "",
         "x": 180,
         "y": 40,
@@ -645,7 +658,7 @@
         "id": "7b79ce6744599d9f",
         "type": "comment",
         "z": "0f0df6776e0a1f53",
-        "name": "Don't forget changing your FreeDS name",
+        "name": "Don't forget to change your FreeDS name",
         "info": "",
         "x": 180,
         "y": 40,
@@ -715,7 +728,7 @@
         "z": "0f0df6776e0a1f53",
         "g": "7a552793f66527ee",
         "name": "",
-        "topic": "freeds_57d0/cmnd",
+        "topic": "freeds_57D0/cmnd",
         "qos": "",
         "retain": "",
         "respTopic": "",
@@ -792,7 +805,7 @@
         "z": "6cd29244e24de4f2",
         "g": "abf0e2592e5868d7",
         "name": "",
-        "topic": "freeds_57d0/FDS_b_LowTempManualMode",
+        "topic": "freeds_57D0/FDS_b_LowTempManualMode",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "4662cbccc81a7620",
@@ -814,7 +827,7 @@
         "z": "6cd29244e24de4f2",
         "g": "ab01e04905053346",
         "name": "",
-        "topic": "freeds_57d0/FDS_TempIncreaseAutoMode",
+        "topic": "freeds_57D0/FDS_TempIncreaseAutoMode",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "4662cbccc81a7620",
@@ -822,7 +835,7 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 200,
+        "x": 210,
         "y": 620,
         "wires": [
             [
@@ -865,7 +878,7 @@
         "z": "6cd29244e24de4f2",
         "g": "ab01e04905053346",
         "name": "",
-        "topic": "freeds_57d0/FDS_TempIncreaseAutoMode",
+        "topic": "freeds_57D0/FDS_TempIncreaseAutoMode",
         "qos": "",
         "retain": "true",
         "respTopic": "",
@@ -975,7 +988,7 @@
         "z": "6cd29244e24de4f2",
         "g": "eb0ccf529a515511",
         "name": "",
-        "topic": "freeds_57d0/FDS_b_LowTempManualMode",
+        "topic": "freeds_57D0/FDS_b_LowTempManualMode",
         "qos": "",
         "retain": "true",
         "respTopic": "",
@@ -994,7 +1007,7 @@
         "z": "6cd29244e24de4f2",
         "g": "bcc760fcd1a03ce9",
         "name": "",
-        "topic": "freeds_57d0/FDS_LowTempManualMode",
+        "topic": "freeds_57D0/FDS_LowTempManualMode",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "4662cbccc81a7620",
@@ -1045,7 +1058,7 @@
         "z": "6cd29244e24de4f2",
         "g": "bcc760fcd1a03ce9",
         "name": "",
-        "topic": "freeds_57d0/FDS_LowTempManualMode",
+        "topic": "freeds_57D0/FDS_LowTempManualMode",
         "qos": "",
         "retain": "true",
         "respTopic": "",
@@ -1062,7 +1075,7 @@
         "id": "168c0b562ec72440",
         "type": "comment",
         "z": "6cd29244e24de4f2",
-        "name": "Don't forget changing your FreeDS name",
+        "name": "Don't forget to change your FreeDS name",
         "info": "",
         "x": 180,
         "y": 40,
