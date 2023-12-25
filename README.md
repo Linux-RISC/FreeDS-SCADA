@@ -3,6 +3,7 @@
 Last update: 2023/12/25
 - some translations improved
 - works with the last version of FreeDS (Release 1.1.0018 Beta)
+- minor fixes and improvements
 
 # FreeDS-SCADA (Pyhon script added, work in progress, use for testing purposes only)
 FreeDS SCADA developed using Node-Red
