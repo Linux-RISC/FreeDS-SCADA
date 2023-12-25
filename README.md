@@ -22,7 +22,7 @@ This project implements a SCADA for FreeDS, developing these functions:
 3. Install and configure Mosquito MQTT broker and required utilities:<br>
 https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/
 ```
-sudo apt install mosquitto mosquitto-clients screen
+sudo apt install mosquitto mosquitto-clients screen python3 python3-paho-mqtt
 ```
 Edit /etc/mosquitto/mosquitto.conf and add at the end:
 ```
