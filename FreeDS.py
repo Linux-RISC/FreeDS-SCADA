@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 # https://www.emqx.com/en/blog/how-to-use-mqtt-in-python
+# https://pypi.org/project/paho-mqtt/
 # python3.6
 
 import random
@@ -31,23 +32,70 @@ FDS_b_LowTempManualMode = False
 FDS_LowTempManualMode = 0
 FDS_TempIncreaseAutoMode = 0
 
+bReconnection = False
 
 #----------------------------------------------------------------------
 def connect_mqtt() -> mqtt_client:
     def on_connect(client, userdata, flags, rc):
+        # dd/mm/YY H:M:S
+        dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        print(dt_string)
         if rc == 0:
-            # dd/mm/YY H:M:S
-            dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
-            print(dt_string)
             print("Connected to MQTT Broker!")
         else:
-            print("Failed to connect, return code %d\n", rc)
+            print("Failed to connect, return code %d\n" % rc)
+
+        if bReconnection == True:
+           subscribe(client)
+           print ("Client resubscribed\n")
 
     client = mqtt_client.Client(client_id)
     client.username_pw_set(username, password)
     client.on_connect = on_connect
+    client.on_disconnect = on_disconnect
     client.connect(broker_name, broker_port)
     return client
+#----------------------------------------------------------------------
+#FIRST_RECONNECT_DELAY = 1
+#RECONNECT_RATE = 2
+#MAX_RECONNECT_COUNT = 12
+#MAX_RECONNECT_DELAY = 60
+
+def on_disconnect(client, userdata, rc):
+    global bReconnection
+    bReconnection = True
+
+    # dd/mm/YY H:M:S
+    dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+    print(dt_string)
+    #logging.info("Disconnected with result code: %s", rc)
+    print("Disconnected with result code: %s" % rc)
+    print("")
+
+    #reconnect_count, reconnect_delay = 1, FIRST_RECONNECT_DELAY
+    reconnect_delay = 10
+    #while reconnect_count < MAX_RECONNECT_COUNT:
+    while True:
+        # dd/mm/YY H:M:S
+        dt_string = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        print(dt_string)
+        #logging.info("Reconnecting in %d seconds...", reconnect_delay)
+        print("Reconnecting in %d seconds..." % reconnect_delay)
+        time.sleep(reconnect_delay)
+
+        try:
+            client.reconnect()
+            #logging.info("Reconnected successfully!")
+            print("Reconnected successfully!\n")
+            return
+        except Exception as err:
+            #logging.error("%s. Reconnect failed. Retrying...", err)
+            print("%s. Reconnection failed. Retrying...\n" % err)
+
+        #reconnect_delay *= RECONNECT_RATE
+        #reconnect_delay = min(reconnect_delay, MAX_RECONNECT_DELAY)
+        #reconnect_count += 1
+    #logging.info("Reconnect failed after %s attempts. Exiting...", reconnect_count)
 #----------------------------------------------------------------------
 def publish(client, msg):
         time.sleep(1)
