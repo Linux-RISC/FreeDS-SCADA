@@ -32,6 +32,14 @@
         "env": []
     },
     {
+        "id": "59f5586f9754fb7a",
+        "type": "tab",
+        "label": "Logic",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "73afd11ef5989fa6",
         "type": "group",
         "z": "a2c7bcaf73c72f45",
@@ -99,7 +107,7 @@
         ],
         "x": 14,
         "y": 79,
-        "w": 592,
+        "w": 612,
         "h": 82
     },
     {
@@ -169,7 +177,7 @@
             "4a5bc8dbb6158c48",
             "fc3f5aafdc66e59b"
         ],
-        "x": 14,
+        "x": 74,
         "y": 79,
         "w": 492,
         "h": 202
@@ -415,6 +423,21 @@
         "className": ""
     },
     {
+        "id": "02f8d7f1ebe2a87b",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "FreeDS",
+        "name": "My InfluxDB server",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "timeout": "10",
+        "rejectUnauthorized": true
+    },
+    {
         "id": "87bae9c3a362dd77",
         "type": "mqtt in",
         "z": "d8b26bf5573e291c",
@@ -432,7 +455,8 @@
         "y": 180,
         "wires": [
             [
-                "653da727b115acc2"
+                "653da727b115acc2",
+                "2313ba91bf0b3039"
             ]
         ]
     },
@@ -482,7 +506,9 @@
         "y": 120,
         "wires": [
             [
-                "a80ab3b6f4ee3c52"
+                "a80ab3b6f4ee3c52",
+                "05060d1d7b82f77c",
+                "aa8ef165943499ae"
             ]
         ]
     },
@@ -525,6 +551,184 @@
         "wires": []
     },
     {
+        "id": "05060d1d7b82f77c",
+        "type": "influxdb out",
+        "z": "d8b26bf5573e291c",
+        "influxdb": "02f8d7f1ebe2a87b",
+        "name": "",
+        "measurement": "tempTermo",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 630,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "9728b4f495ee85e2",
+        "type": "mqtt in",
+        "z": "d8b26bf5573e291c",
+        "name": "",
+        "topic": "freeds_57D0/tempTriac",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "4662cbccc81a7620",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 320,
+        "wires": [
+            [
+                "89baa39ed2efad77"
+            ]
+        ]
+    },
+    {
+        "id": "89baa39ed2efad77",
+        "type": "influxdb out",
+        "z": "d8b26bf5573e291c",
+        "influxdb": "02f8d7f1ebe2a87b",
+        "name": "",
+        "measurement": "tempTriac",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 500,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "68754d01f8f5bec0",
+        "type": "influxdb out",
+        "z": "d8b26bf5573e291c",
+        "influxdb": "02f8d7f1ebe2a87b",
+        "name": "",
+        "measurement": "houseConsumption",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 530,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "4f01436f8d81228b",
+        "type": "mqtt in",
+        "z": "d8b26bf5573e291c",
+        "name": "",
+        "topic": "freeds_57D0/houseConsumption",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "4662cbccc81a7620",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 360,
+        "wires": [
+            [
+                "68754d01f8f5bec0"
+            ]
+        ]
+    },
+    {
+        "id": "2313ba91bf0b3039",
+        "type": "influxdb out",
+        "z": "d8b26bf5573e291c",
+        "influxdb": "02f8d7f1ebe2a87b",
+        "name": "",
+        "measurement": "pwm",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 610,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "9f92eef02b4d0ceb",
+        "type": "influxdb out",
+        "z": "d8b26bf5573e291c",
+        "influxdb": "02f8d7f1ebe2a87b",
+        "name": "",
+        "measurement": "gridW",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 490,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "28afe036c159f876",
+        "type": "mqtt in",
+        "z": "d8b26bf5573e291c",
+        "name": "",
+        "topic": "freeds_57D0/gridW",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "4662cbccc81a7620",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "9f92eef02b4d0ceb"
+            ]
+        ]
+    },
+    {
+        "id": "aa8ef165943499ae",
+        "type": "change",
+        "z": "d8b26bf5573e291c",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "tempTermo",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "a3c6b555aadcf205",
         "type": "mqtt in",
         "z": "a2c7bcaf73c72f45",
@@ -542,7 +746,8 @@
         "y": 120,
         "wires": [
             [
-                "4990ff237ddeecf1"
+                "4990ff237ddeecf1",
+                "8e48a71faa10dcfa"
             ]
         ]
     },
@@ -564,7 +769,8 @@
         "y": 180,
         "wires": [
             [
-                "aa23e2ae80eed91e"
+                "aa23e2ae80eed91e",
+                "c00ce947ea18e532"
             ]
         ]
     },
@@ -640,7 +846,8 @@
         "y": 240,
         "wires": [
             [
-                "f61d826e8502976a"
+                "f61d826e8502976a",
+                "a5fbe70a2f8df5a1"
             ]
         ]
     },
@@ -653,6 +860,67 @@
         "x": 180,
         "y": 40,
         "wires": []
+    },
+    {
+        "id": "8e48a71faa10dcfa",
+        "type": "influxdb out",
+        "z": "a2c7bcaf73c72f45",
+        "influxdb": "02f8d7f1ebe2a87b",
+        "name": "",
+        "measurement": "solarW",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 590,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "c00ce947ea18e532",
+        "type": "influxdb out",
+        "z": "a2c7bcaf73c72f45",
+        "influxdb": "02f8d7f1ebe2a87b",
+        "name": "",
+        "measurement": "gridW",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 590,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "a5fbe70a2f8df5a1",
+        "type": "change",
+        "z": "a2c7bcaf73c72f45",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "pwm",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 360,
+        "y": 320,
+        "wires": [
+            []
+        ]
     },
     {
         "id": "7b79ce6744599d9f",
@@ -685,7 +953,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 110,
+        "x": 170,
         "y": 120,
         "wires": [
             [
@@ -714,7 +982,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 120,
+        "x": 180,
         "y": 160,
         "wires": [
             [
@@ -737,7 +1005,7 @@
         "correl": "",
         "expiry": "",
         "broker": "4662cbccc81a7620",
-        "x": 390,
+        "x": 450,
         "y": 180,
         "wires": []
     },
@@ -751,7 +1019,7 @@
         "order": 4,
         "width": "2",
         "height": "1",
-        "passthru": false,
+        "passthru": true,
         "label": "MAN mode",
         "tooltip": "",
         "color": "",
@@ -762,7 +1030,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 110,
+        "x": 170,
         "y": 200,
         "wires": [
             [
@@ -780,7 +1048,7 @@
         "order": 3,
         "width": "2",
         "height": "1",
-        "passthru": false,
+        "passthru": true,
         "label": "AUTO mode",
         "tooltip": "",
         "color": "",
@@ -791,11 +1059,43 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 110,
+        "x": 170,
         "y": 240,
         "wires": [
             [
                 "fe8f848d79866313"
+            ]
+        ]
+    },
+    {
+        "id": "8b42e62642e89f69",
+        "type": "link in",
+        "z": "0f0df6776e0a1f53",
+        "name": "MAN mode command",
+        "links": [
+            "6d1b3293a875ee32"
+        ],
+        "x": 35,
+        "y": 200,
+        "wires": [
+            [
+                "4a5bc8dbb6158c48"
+            ]
+        ]
+    },
+    {
+        "id": "c8f19162a82fdbc7",
+        "type": "link in",
+        "z": "0f0df6776e0a1f53",
+        "name": "AUTO mode command",
+        "links": [
+            "e4a00d834733a2b2"
+        ],
+        "x": 35,
+        "y": 240,
+        "wires": [
+            [
+                "fc3f5aafdc66e59b"
             ]
         ]
     },
@@ -817,7 +1117,8 @@
         "y": 120,
         "wires": [
             [
-                "eeeee2c69ae6afa0"
+                "eeeee2c69ae6afa0",
+                "f0e79c8fe883e57b"
             ]
         ]
     },
@@ -839,7 +1140,8 @@
         "y": 620,
         "wires": [
             [
-                "341c9dfaafaa9268"
+                "341c9dfaafaa9268",
+                "0f89028aba5c53e0"
             ]
         ]
     },
@@ -918,7 +1220,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 490,
+        "x": 510,
         "y": 120,
         "wires": [
             []
@@ -1019,7 +1321,8 @@
         "y": 360,
         "wires": [
             [
-                "e920b22e94f0fa87"
+                "e920b22e94f0fa87",
+                "5fe252de8d70ccb4"
             ]
         ]
     },
@@ -1079,6 +1382,378 @@
         "info": "",
         "x": 180,
         "y": 40,
+        "wires": []
+    },
+    {
+        "id": "f0e79c8fe883e57b",
+        "type": "change",
+        "z": "6cd29244e24de4f2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "FDS_b_LowTempManualMode",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5fe252de8d70ccb4",
+        "type": "change",
+        "z": "6cd29244e24de4f2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "FDS_LowTempManualMode",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 650,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0f89028aba5c53e0",
+        "type": "change",
+        "z": "6cd29244e24de4f2",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "FDS_TempIncreaseAutoMode",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "abfadc5a2fd5a05f",
+        "type": "inject",
+        "z": "59f5586f9754fb7a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "d56b48b76125b4ce"
+            ]
+        ]
+    },
+    {
+        "id": "c06495861d675f54",
+        "type": "function",
+        "z": "59f5586f9754fb7a",
+        "name": "global.tempTermo>=global.FDS_LowTempManualMode+global.FDS_TempIncreaseAutoMode ?",
+        "func": "if (global.get(\"tempTermo\")>=global.get(\"FDS_LowTempManualMode\")+global.get(\"FDS_TempIncreaseAutoMode\")) {\n   msg.payload=true \n}\nelse {\n    msg.payload=false\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 200,
+        "wires": [
+            [
+                "5fce4252428c8bb6"
+            ]
+        ]
+    },
+    {
+        "id": "3e9b7bde6cb1d293",
+        "type": "switch",
+        "z": "59f5586f9754fb7a",
+        "name": "global.tempTermo<=global.FDS_LowTempManualMode ?",
+        "property": "tempTermo",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "lte",
+                "v": "FDS_LowTempManualMode",
+                "vt": "global"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 290,
+        "y": 200,
+        "wires": [
+            [
+                "a32791bf7f8decb1"
+            ]
+        ]
+    },
+    {
+        "id": "4e17eeb1454743da",
+        "type": "debug",
+        "z": "59f5586f9754fb7a",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 140,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "a32791bf7f8decb1",
+        "type": "change",
+        "z": "59f5586f9754fb7a",
+        "name": "switch to MAN mode",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "switch to MAN mode",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 180,
+        "y": 240,
+        "wires": [
+            [
+                "4e17eeb1454743da",
+                "6d1b3293a875ee32"
+            ]
+        ]
+    },
+    {
+        "id": "e5fc3bcc0e01980a",
+        "type": "switch",
+        "z": "59f5586f9754fb7a",
+        "name": "global.pwm=MAN ?",
+        "property": "pwm",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "MAN",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 690,
+        "y": 160,
+        "wires": [
+            [
+                "c06495861d675f54"
+            ]
+        ]
+    },
+    {
+        "id": "44553b3c6b92fb05",
+        "type": "debug",
+        "z": "59f5586f9754fb7a",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d56b48b76125b4ce",
+        "type": "switch",
+        "z": "59f5586f9754fb7a",
+        "name": "global.FDS_b_LowTempManualMode is true",
+        "property": "FDS_b_LowTempManualMode",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 210,
+        "y": 100,
+        "wires": [
+            [
+                "0ebe78c532335c13",
+                "e5fc3bcc0e01980a"
+            ]
+        ]
+    },
+    {
+        "id": "0ebe78c532335c13",
+        "type": "switch",
+        "z": "59f5586f9754fb7a",
+        "name": "global.pwm=AUTO ?",
+        "property": "pwm",
+        "propertyType": "global",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "AUTO",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "3e9b7bde6cb1d293"
+            ]
+        ]
+    },
+    {
+        "id": "878d2f9083013373",
+        "type": "comment",
+        "z": "59f5586f9754fb7a",
+        "name": "Don't forget to change your FreeDS name",
+        "info": "",
+        "x": 460,
+        "y": 20,
+        "wires": []
+    },
+    {
+        "id": "5fce4252428c8bb6",
+        "type": "switch",
+        "z": "59f5586f9754fb7a",
+        "name": "msg.payload is true ?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 700,
+        "y": 240,
+        "wires": [
+            [
+                "ade87bf03e9425d0"
+            ]
+        ]
+    },
+    {
+        "id": "6d1b3293a875ee32",
+        "type": "link out",
+        "z": "59f5586f9754fb7a",
+        "name": "set MAN mode",
+        "mode": "link",
+        "links": [
+            "8b42e62642e89f69"
+        ],
+        "x": 355,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "ade87bf03e9425d0",
+        "type": "change",
+        "z": "59f5586f9754fb7a",
+        "name": "switch to AUTO mode",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "switch to AUTO mode",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 280,
+        "wires": [
+            [
+                "e4a00d834733a2b2",
+                "44553b3c6b92fb05"
+            ]
+        ]
+    },
+    {
+        "id": "e4a00d834733a2b2",
+        "type": "link out",
+        "z": "59f5586f9754fb7a",
+        "name": "set AUTO mode",
+        "mode": "link",
+        "links": [
+            "c8f19162a82fdbc7"
+        ],
+        "x": 855,
+        "y": 280,
         "wires": []
     }
 ]
