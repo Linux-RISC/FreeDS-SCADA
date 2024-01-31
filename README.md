@@ -1,11 +1,12 @@
 <a href="https://www.buymeacoffee.com/rbpiuserf" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
-Last update: 2023/12/25
-- some translations improved
-- works with the last version of FreeDS (Release 1.1.0018 Beta)
+Last update: 2024/02/01
+- Python script removed, all the logic is implemented using Node-RED
+- MQTT data is stored InfluxDB
+- Grafana can be used to display trends
 - minor fixes and improvements
 
-# FreeDS-SCADA (Pyhon script added, work in progress, use for testing purposes only)
+# FreeDS-SCADA
 FreeDS SCADA developed using Node-Red
 
 <img src="FreeDS-SCADA.png" title="FreeDS-SCADA">
@@ -22,7 +23,7 @@ This project implements a SCADA for FreeDS, developing these functions:
 3. Install and configure Mosquito MQTT broker and required utilities:<br>
 https://randomnerdtutorials.com/how-to-install-mosquitto-broker-on-raspberry-pi/
 ```
-sudo apt install mosquitto mosquitto-clients screen python3 python3-paho-mqtt
+sudo apt install mosquitto mosquitto-clients influxdb influxdb-client
 ```
 Edit /etc/mosquitto/mosquitto.conf and add at the end:
 ```
@@ -45,7 +46,14 @@ Access to Node-Red from a Internet browser:<br>
 http://raspberry-pi-IP:1880<br>
 http://raspberry-pi-IP:1880/ui (runtime)<br>
 
-5. Optional but recommendable:
+5. Create FreeDS database on InfluxDB:<br>
+```
+$ influx
+> create database FreeDS
+> quit 
+```
+
+6. Optional but recommendable:
 - download MQTT explorer in order to debug MQTT broker: http://mqtt-explorer.com/
 - configure your timezone and enable time synchronization:<br>
 raspi-config --> Localisation Options --> Timezone
@@ -54,9 +62,7 @@ sudo raspi-config
 sudo systemctl enable systemd-timesyncd
 ```
 
-6. Log into Node-Red using http://raspberry-pi-IP:1880 and install node-red-dashboard:<br>
+7. Log into Node-Red using http://raspberry-pi-IP:1880 and install node-red-dashboard and node-red-contrib-influxdb:<br>
 Menu-->Manage Palete-->Install and search node-red-dashboard, select it for installation and accept
-
-7. Download <a href="FreeDS.py" target="_blank">FreeDS.py</a> and run it in a screen session
 
 8. Download <a href="FreeDS-SCADA.json" target="_blank">FreeDS-SCADA.json</a>, import it into Node-Red and enjoy !
