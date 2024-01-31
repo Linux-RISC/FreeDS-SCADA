@@ -10,6 +10,7 @@ Last update: 2024/02/01
 FreeDS SCADA developed using Node-Red
 
 <img src="FreeDS-SCADA.png" title="FreeDS-SCADA">
+<img src="Grafana.png" title="Grafana">
 
 #### Project objectives
 This project implements a SCADA for FreeDS, developing these functions:
