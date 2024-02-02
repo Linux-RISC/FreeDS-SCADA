@@ -1499,7 +1499,7 @@
         "payload": "",
         "payloadType": "date",
         "x": 110,
-        "y": 40,
+        "y": 100,
         "wires": [
             [
                 "d56b48b76125b4ce"
@@ -1519,7 +1519,7 @@
         "finalize": "",
         "libs": [],
         "x": 930,
-        "y": 200,
+        "y": 160,
         "wires": [
             [
                 "5fce4252428c8bb6"
@@ -1544,7 +1544,7 @@
         "repair": false,
         "outputs": 1,
         "x": 290,
-        "y": 200,
+        "y": 260,
         "wires": [
             [
                 "a32791bf7f8decb1"
@@ -1565,7 +1565,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 140,
-        "y": 280,
+        "y": 340,
         "wires": []
     },
     {
@@ -1588,7 +1588,7 @@
         "to": "",
         "reg": false,
         "x": 180,
-        "y": 240,
+        "y": 300,
         "wires": [
             [
                 "4e17eeb1454743da",
@@ -1614,7 +1614,7 @@
         "repair": false,
         "outputs": 1,
         "x": 690,
-        "y": 160,
+        "y": 220,
         "wires": [
             [
                 "c06495861d675f54"
@@ -1635,7 +1635,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 660,
-        "y": 320,
+        "y": 380,
         "wires": []
     },
     {
@@ -1654,7 +1654,7 @@
         "repair": false,
         "outputs": 1,
         "x": 210,
-        "y": 100,
+        "y": 160,
         "wires": [
             [
                 "0ebe78c532335c13",
@@ -1680,7 +1680,7 @@
         "repair": false,
         "outputs": 1,
         "x": 180,
-        "y": 160,
+        "y": 220,
         "wires": [
             [
                 "3e9b7bde6cb1d293"
@@ -1693,8 +1693,8 @@
         "z": "59f5586f9754fb7a",
         "name": "Don't forget to change your FreeDS name",
         "info": "",
-        "x": 460,
-        "y": 20,
+        "x": 180,
+        "y": 40,
         "wires": []
     },
     {
@@ -1713,7 +1713,7 @@
         "repair": false,
         "outputs": 1,
         "x": 700,
-        "y": 240,
+        "y": 300,
         "wires": [
             [
                 "ade87bf03e9425d0"
@@ -1730,7 +1730,7 @@
             "8b42e62642e89f69"
         ],
         "x": 355,
-        "y": 240,
+        "y": 300,
         "wires": []
     },
     {
@@ -1753,7 +1753,7 @@
         "to": "",
         "reg": false,
         "x": 700,
-        "y": 280,
+        "y": 340,
         "wires": [
             [
                 "e4a00d834733a2b2",
@@ -1771,7 +1771,7 @@
             "c8f19162a82fdbc7"
         ],
         "x": 855,
-        "y": 280,
+        "y": 240,
         "wires": []
     }
 ]
