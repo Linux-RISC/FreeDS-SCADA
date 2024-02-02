@@ -58,12 +58,15 @@
             "aa23e2ae80eed91e",
             "4990ff237ddeecf1",
             "f61d826e8502976a",
-            "8059f443d664f1e4"
+            "8059f443d664f1e4",
+            "8e48a71faa10dcfa",
+            "c00ce947ea18e532",
+            "a5fbe70a2f8df5a1"
         ],
         "x": 14,
         "y": 79,
-        "w": 432,
-        "h": 202
+        "w": 552,
+        "h": 282
     },
     {
         "id": "ab01e04905053346",
@@ -81,12 +84,13 @@
         "nodes": [
             "b72b6e2c55472ac3",
             "341c9dfaafaa9268",
-            "524d31480734b253"
+            "524d31480734b253",
+            "0f89028aba5c53e0"
         ],
         "x": 14,
-        "y": 579,
-        "w": 452,
-        "h": 262
+        "y": 619,
+        "w": 772,
+        "h": 242
     },
     {
         "id": "abf0e2592e5868d7",
@@ -103,12 +107,13 @@
         },
         "nodes": [
             "32e9525c79f75292",
-            "eeeee2c69ae6afa0"
+            "eeeee2c69ae6afa0",
+            "f0e79c8fe883e57b"
         ],
         "x": 14,
         "y": 79,
-        "w": 612,
-        "h": 82
+        "w": 752,
+        "h": 122
     },
     {
         "id": "eb0ccf529a515511",
@@ -129,8 +134,8 @@
             "8552bee6b8c79f80"
         ],
         "x": 14,
-        "y": 179,
-        "w": 612,
+        "y": 219,
+        "w": 592,
         "h": 122
     },
     {
@@ -150,12 +155,15 @@
             "87bae9c3a362dd77",
             "653da727b115acc2",
             "d23f7e16b5e7a9de",
-            "a80ab3b6f4ee3c52"
+            "a80ab3b6f4ee3c52",
+            "2313ba91bf0b3039",
+            "05060d1d7b82f77c",
+            "aa8ef165943499ae"
         ],
         "x": 14,
         "y": 79,
-        "w": 452,
-        "h": 142
+        "w": 652,
+        "h": 262
     },
     {
         "id": "7a552793f66527ee",
@@ -198,11 +206,12 @@
         "nodes": [
             "d555cb65f2eddb58",
             "e920b22e94f0fa87",
-            "6b57585c3193670d"
+            "6b57585c3193670d",
+            "5fe252de8d70ccb4"
         ],
         "x": 14,
-        "y": 319,
-        "w": 432,
+        "y": 359,
+        "w": 772,
         "h": 242
     },
     {
@@ -452,7 +461,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 130,
-        "y": 180,
+        "y": 280,
         "wires": [
             [
                 "653da727b115acc2",
@@ -484,8 +493,8 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 340,
-        "y": 180,
+        "x": 400,
+        "y": 260,
         "wires": []
     },
     {
@@ -503,7 +512,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 150,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "a80ab3b6f4ee3c52",
@@ -536,7 +545,7 @@
         "seg1": "",
         "seg2": "",
         "className": "",
-        "x": 360,
+        "x": 420,
         "y": 120,
         "wires": []
     },
@@ -554,6 +563,7 @@
         "id": "05060d1d7b82f77c",
         "type": "influxdb out",
         "z": "d8b26bf5573e291c",
+        "g": "2e043a9e465dd95b",
         "influxdb": "02f8d7f1ebe2a87b",
         "name": "",
         "measurement": "tempTermo",
@@ -564,8 +574,8 @@
         "retentionPolicyV18Flux": "",
         "org": "organisation",
         "bucket": "bucket",
-        "x": 630,
-        "y": 120,
+        "x": 490,
+        "y": 160,
         "wires": []
     },
     {
@@ -582,7 +592,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 140,
-        "y": 320,
+        "y": 420,
         "wires": [
             [
                 "89baa39ed2efad77"
@@ -604,7 +614,7 @@
         "org": "organisation",
         "bucket": "bucket",
         "x": 500,
-        "y": 320,
+        "y": 420,
         "wires": []
     },
     {
@@ -622,7 +632,7 @@
         "org": "organisation",
         "bucket": "bucket",
         "x": 530,
-        "y": 360,
+        "y": 460,
         "wires": []
     },
     {
@@ -639,7 +649,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 170,
-        "y": 360,
+        "y": 460,
         "wires": [
             [
                 "68754d01f8f5bec0"
@@ -650,6 +660,7 @@
         "id": "2313ba91bf0b3039",
         "type": "influxdb out",
         "z": "d8b26bf5573e291c",
+        "g": "2e043a9e465dd95b",
         "influxdb": "02f8d7f1ebe2a87b",
         "name": "",
         "measurement": "pwm",
@@ -660,8 +671,8 @@
         "retentionPolicyV18Flux": "",
         "org": "organisation",
         "bucket": "bucket",
-        "x": 610,
-        "y": 180,
+        "x": 470,
+        "y": 300,
         "wires": []
     },
     {
@@ -679,7 +690,7 @@
         "org": "organisation",
         "bucket": "bucket",
         "x": 490,
-        "y": 280,
+        "y": 380,
         "wires": []
     },
     {
@@ -696,7 +707,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 130,
-        "y": 280,
+        "y": 380,
         "wires": [
             [
                 "9f92eef02b4d0ceb"
@@ -707,6 +718,7 @@
         "id": "aa8ef165943499ae",
         "type": "change",
         "z": "d8b26bf5573e291c",
+        "g": "2e043a9e465dd95b",
         "name": "",
         "rules": [
             {
@@ -722,8 +734,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 580,
-        "y": 60,
+        "x": 440,
+        "y": 200,
         "wires": [
             []
         ]
@@ -743,7 +755,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 130,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "4990ff237ddeecf1",
@@ -766,7 +778,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 130,
-        "y": 180,
+        "y": 220,
         "wires": [
             [
                 "aa23e2ae80eed91e",
@@ -789,7 +801,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 340,
-        "y": 180,
+        "y": 200,
         "wires": []
     },
     {
@@ -825,7 +837,7 @@
         "layout": "row-spread",
         "className": "",
         "x": 330,
-        "y": 240,
+        "y": 280,
         "wires": []
     },
     {
@@ -843,7 +855,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 140,
-        "y": 240,
+        "y": 300,
         "wires": [
             [
                 "f61d826e8502976a",
@@ -865,6 +877,7 @@
         "id": "8e48a71faa10dcfa",
         "type": "influxdb out",
         "z": "a2c7bcaf73c72f45",
+        "g": "73afd11ef5989fa6",
         "influxdb": "02f8d7f1ebe2a87b",
         "name": "",
         "measurement": "solarW",
@@ -875,14 +888,15 @@
         "retentionPolicyV18Flux": "",
         "org": "organisation",
         "bucket": "bucket",
-        "x": 590,
-        "y": 120,
+        "x": 410,
+        "y": 160,
         "wires": []
     },
     {
         "id": "c00ce947ea18e532",
         "type": "influxdb out",
         "z": "a2c7bcaf73c72f45",
+        "g": "73afd11ef5989fa6",
         "influxdb": "02f8d7f1ebe2a87b",
         "name": "",
         "measurement": "gridW",
@@ -893,14 +907,15 @@
         "retentionPolicyV18Flux": "",
         "org": "organisation",
         "bucket": "bucket",
-        "x": 590,
-        "y": 180,
+        "x": 410,
+        "y": 240,
         "wires": []
     },
     {
         "id": "a5fbe70a2f8df5a1",
         "type": "change",
         "z": "a2c7bcaf73c72f45",
+        "g": "73afd11ef5989fa6",
         "name": "",
         "rules": [
             {
@@ -1114,7 +1129,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 210,
-        "y": 120,
+        "y": 140,
         "wires": [
             [
                 "eeeee2c69ae6afa0",
@@ -1137,7 +1152,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 210,
-        "y": 620,
+        "y": 680,
         "wires": [
             [
                 "341c9dfaafaa9268",
@@ -1167,7 +1182,7 @@
         "step": 1,
         "className": "",
         "x": 250,
-        "y": 700,
+        "y": 760,
         "wires": [
             [
                 "524d31480734b253"
@@ -1189,8 +1204,8 @@
         "correl": "",
         "expiry": "",
         "broker": "4662cbccc81a7620",
-        "x": 250,
-        "y": 800,
+        "x": 230,
+        "y": 820,
         "wires": []
     },
     {
@@ -1221,7 +1236,7 @@
         "animate": false,
         "className": "",
         "x": 510,
-        "y": 120,
+        "y": 160,
         "wires": [
             []
         ]
@@ -1248,7 +1263,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 100,
-        "y": 220,
+        "y": 260,
         "wires": [
             [
                 "8552bee6b8c79f80"
@@ -1277,7 +1292,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 100,
-        "y": 260,
+        "y": 300,
         "wires": [
             [
                 "8552bee6b8c79f80"
@@ -1299,8 +1314,8 @@
         "correl": "",
         "expiry": "",
         "broker": "4662cbccc81a7620",
-        "x": 430,
-        "y": 220,
+        "x": 410,
+        "y": 280,
         "wires": []
     },
     {
@@ -1318,7 +1333,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 200,
-        "y": 360,
+        "y": 420,
         "wires": [
             [
                 "e920b22e94f0fa87",
@@ -1347,8 +1362,8 @@
         "max": "100",
         "step": 1,
         "className": "",
-        "x": 250,
-        "y": 440,
+        "x": 230,
+        "y": 500,
         "wires": [
             [
                 "6b57585c3193670d"
@@ -1370,8 +1385,8 @@
         "correl": "",
         "expiry": "",
         "broker": "4662cbccc81a7620",
-        "x": 240,
-        "y": 520,
+        "x": 220,
+        "y": 560,
         "wires": []
     },
     {
@@ -1388,6 +1403,7 @@
         "id": "f0e79c8fe883e57b",
         "type": "change",
         "z": "6cd29244e24de4f2",
+        "g": "abf0e2592e5868d7",
         "name": "",
         "rules": [
             {
@@ -1403,8 +1419,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 540,
-        "y": 40,
+        "x": 580,
+        "y": 120,
         "wires": [
             []
         ]
@@ -1413,6 +1429,7 @@
         "id": "5fe252de8d70ccb4",
         "type": "change",
         "z": "6cd29244e24de4f2",
+        "g": "bcc760fcd1a03ce9",
         "name": "",
         "rules": [
             {
@@ -1428,8 +1445,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 650,
-        "y": 360,
+        "x": 610,
+        "y": 400,
         "wires": [
             []
         ]
@@ -1438,6 +1455,7 @@
         "id": "0f89028aba5c53e0",
         "type": "change",
         "z": "6cd29244e24de4f2",
+        "g": "ab01e04905053346",
         "name": "",
         "rules": [
             {
@@ -1453,8 +1471,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 660,
-        "y": 620,
+        "x": 600,
+        "y": 660,
         "wires": [
             []
         ]
