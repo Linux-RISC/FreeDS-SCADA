@@ -64,7 +64,7 @@ sudo raspi-config
 sudo systemctl enable systemd-timesyncd
 ```
 
-7. Log into Node-RED using http://raspberry-pi-IP:1880 and install node-red-dashboard/node-red-contrib-influxdb/node-red-contrib-filesystem:<br>
-Menu-->Manage Palete-->Install and search node-red-dashboard/node-red-contrib-influxdb/node-red-contrib-filesystem, select it for installation and accept
+7. Log into Node-RED using http://raspberry-pi-IP:1880 and install node-red-dashboard/node-red-contrib-influxdb:<br>
+Menu-->Manage Palete-->Install and search node-red-dashboard/node-red-contrib-influxdb, select it for installation and accept
 
 8. Download <a href="FreeDS-SCADA.json" target="_blank">FreeDS-SCADA.json</a>, import it into Node-RED and enjoy !
