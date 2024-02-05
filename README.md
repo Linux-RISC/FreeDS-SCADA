@@ -1,8 +1,9 @@
 <a href="https://www.buymeacoffee.com/rbpiuserf" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
-Last update: 2024/02/01
+Last update: 2024/02/05
 - Python script removed, all the logic is implemented using Node-RED
 - MQTT data is stored InfluxDB
+- Shelly EM integration
 - Grafana can be used to display trends
 - minor fixes and improvements
 
@@ -63,7 +64,7 @@ sudo raspi-config
 sudo systemctl enable systemd-timesyncd
 ```
 
-7. Log into Node-RED using http://raspberry-pi-IP:1880 and install node-red-dashboard and node-red-contrib-influxdb:<br>
-Menu-->Manage Palete-->Install and search node-red-dashboard/node-red-contrib-influxdb, select it for installation and accept
+7. Log into Node-RED using http://raspberry-pi-IP:1880 and install node-red-dashboard/node-red-contrib-influxdb/node-red-contrib-filesystem:<br>
+Menu-->Manage Palete-->Install and search node-red-dashboard/node-red-contrib-influxdb/node-red-contrib-filesystem, select it for installation and accept
 
 8. Download <a href="FreeDS-SCADA.json" target="_blank">FreeDS-SCADA.json</a>, import it into Node-RED and enjoy !
