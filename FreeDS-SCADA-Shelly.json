@@ -1,0 +1,19 @@
+[
+    {
+        "id": "155ab64de2a92ef0",
+        "type": "file",
+        "z": "d911c9adc3d6211d",
+        "name": "Write daily amounts",
+        "filename": "Shelly_EM.txt",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 1290,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    }
+]
